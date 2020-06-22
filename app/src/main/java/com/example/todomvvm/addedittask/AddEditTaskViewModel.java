@@ -36,5 +36,4 @@ public class AddEditTaskViewModel extends AndroidViewModel {
         repository.insertTask(task);
     }
 
-
 }

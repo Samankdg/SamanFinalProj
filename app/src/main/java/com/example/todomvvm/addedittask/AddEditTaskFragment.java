@@ -1,10 +1,5 @@
 package com.example.todomvvm.addedittask;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
-
 import android.app.AlarmManager;
 import android.app.DatePickerDialog;
 import android.app.Notification;
@@ -13,25 +8,37 @@ import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
+
 import android.text.InputType;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.example.todomvvm.R;
-import com.example.todomvvm.database.AppDatabase;
-import com.example.todomvvm.database.Repository;
 import com.example.todomvvm.database.TaskEntry;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class AddEditTaskActivity extends AppCompatActivity {
+
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class AddEditTaskFragment extends Fragment {
 
     // Extra for the task ID to be received in the intent
     public static final String EXTRA_TASK_ID = "extraTaskId";
@@ -62,32 +69,33 @@ public class AddEditTaskActivity extends AppCompatActivity {
 
     AddEditTaskViewModel viewModel;
 
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_edit_task);
+    public AddEditTaskFragment() {
+        // Required empty public constructor
+    }
 
 
-        tvDate = findViewById(R.id.tvDate);
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View v = inflater.inflate(R.layout.fragment_add_edit_task, container, false);
+        tvDate = v.findViewById(R.id.tvDate);
         tvDate.setInputType(InputType.TYPE_NULL);
 
         //show and hide notification adder on switch
-        aSwitch =(Switch) findViewById(R.id.toDoHasDateSwitchCompat);
+        aSwitch = (Switch) v.findViewById(R.id.toDoHasDateSwitchCompat);
         tvDate.setVisibility(View.INVISIBLE);
         aSwitch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (aSwitch.isChecked()==true) {
+                if (aSwitch.isChecked() == true) {
                     tvDate.setVisibility(View.VISIBLE);
-                }
-                else
-                {
+                } else {
                     tvDate.setVisibility(View.INVISIBLE);
                 }
             }
         });
 
-
-        //for date and time picker
         tvDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -101,7 +109,7 @@ public class AddEditTaskActivity extends AppCompatActivity {
             mTaskId = savedInstanceState.getInt(INSTANCE_TASK_ID, DEFAULT_TASK_ID);
         }
 
-        Intent intent = getIntent();
+        Intent intent = getActivity().getIntent();
 
         if (intent != null && intent.hasExtra(EXTRA_TASK_ID)) {
             mButton.setText(R.string.update_button);
@@ -110,10 +118,10 @@ public class AddEditTaskActivity extends AppCompatActivity {
                 // populate the UI
 
                 mTaskId = intent.getIntExtra(EXTRA_TASK_ID, DEFAULT_TASK_ID);
-                AddEditTaskViewModelFactory factory = new AddEditTaskViewModelFactory(getApplication(), mTaskId);
+                AddEditTaskViewModelFactory factory = new AddEditTaskViewModelFactory(getActivity().getApplication(), mTaskId);
                 viewModel = ViewModelProviders.of(this, factory).get(AddEditTaskViewModel.class);
 
-                viewModel.getTask().observe(this, new Observer<TaskEntry>() {
+                viewModel.getTask().observe(getActivity(), new Observer<TaskEntry>() {
                     @Override
                     public void onChanged(TaskEntry taskEntry) {
                         viewModel.getTask().removeObserver(this);
@@ -122,14 +130,14 @@ public class AddEditTaskActivity extends AppCompatActivity {
                 });
 
             }
-        }else{
-            AddEditTaskViewModelFactory factory = new AddEditTaskViewModelFactory(getApplication(), mTaskId);
+        } else {
+            AddEditTaskViewModelFactory factory = new AddEditTaskViewModelFactory(getActivity().getApplication(), mTaskId);
             viewModel = ViewModelProviders.of(this, factory).get(AddEditTaskViewModel.class);
         }
+        return v;
     }
-
     @Override
-    protected void onSaveInstanceState(Bundle outState) {
+    public void onSaveInstanceState(Bundle outState) {
         outState.putInt(INSTANCE_TASK_ID, mTaskId);
         super.onSaveInstanceState(outState);
     }
@@ -138,10 +146,11 @@ public class AddEditTaskActivity extends AppCompatActivity {
      * initViews is called from onCreate to init the member variable views
      */
     private void initViews() {
-        mEditText = findViewById(R.id.editTextTaskDescription);
-        mRadioGroup = findViewById(R.id.radioGroup);
 
-        mButton = findViewById(R.id.saveButton);
+        mEditText = (EditText) this.getView().findViewById(R.id.editTextTaskDescription);
+        mRadioGroup = (RadioGroup) this.getView().findViewById(R.id.radioGroup);
+
+        mButton = (Button)this.getView().findViewById(R.id.saveButton);
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -181,7 +190,7 @@ public class AddEditTaskActivity extends AppCompatActivity {
             viewModel.updateTask(todo);
 
         }
-        finish();
+        getActivity().finish();
 
     }
 
@@ -190,7 +199,7 @@ public class AddEditTaskActivity extends AppCompatActivity {
      */
     public int getPriorityFromViews() {
         int priority = 1;
-        int checkedId = ((RadioGroup) findViewById(R.id.radioGroup)).getCheckedRadioButtonId();
+        int checkedId = ((RadioGroup) getView().findViewById(R.id.radioGroup)).getCheckedRadioButtonId();
         switch (checkedId) {
             case R.id.radButton1:
                 priority = PRIORITY_HIGH;
@@ -212,28 +221,28 @@ public class AddEditTaskActivity extends AppCompatActivity {
     public void setPriorityInViews(int priority) {
         switch (priority) {
             case PRIORITY_HIGH:
-                ((RadioGroup) findViewById(R.id.radioGroup)).check(R.id.radButton1);
+                ((RadioGroup) getView().findViewById(R.id.radioGroup)).check(R.id.radButton1);
                 break;
             case PRIORITY_MEDIUM:
-                ((RadioGroup) findViewById(R.id.radioGroup)).check(R.id.radButton2);
+                ((RadioGroup) getView().findViewById(R.id.radioGroup)).check(R.id.radButton2);
                 break;
             case PRIORITY_LOW:
-                ((RadioGroup) findViewById(R.id.radioGroup)).check(R.id.radButton3);
+                ((RadioGroup) getView().findViewById(R.id.radioGroup)).check(R.id.radButton3);
         }
     }
 
     //initializing notification
     private void scheduleNotification(Notification notification, long delay) {
-        Intent notificationIntent = new Intent(this, MyNotificationPublisher.class);
+        Intent notificationIntent = new Intent(getActivity(), MyNotificationPublisher.class);
         notificationIntent.putExtra(MyNotificationPublisher.NOTIFICATION_ID, 1);
         notificationIntent.putExtra(MyNotificationPublisher.NOTIFICATION, notification);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(getActivity(), 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
         assert alarmManager != null;
         alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, delay, pendingIntent);
     }
     private Notification getNotification(String content) {
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, default_notification_channel_id);
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(getActivity(), default_notification_channel_id);
         builder.setContentTitle("Check Your TODO");
         builder.setContentText(content);
         builder.setSmallIcon(R.drawable.ic_launcher_foreground);
@@ -262,10 +271,10 @@ public class AddEditTaskActivity extends AppCompatActivity {
                         scheduleNotification(getNotification(tvDate.getText().toString()), date.getTime());
                     }
                 };
-                new TimePickerDialog(AddEditTaskActivity.this,timeSetListener,calendar.get(Calendar.HOUR_OF_DAY),calendar.get(Calendar.MINUTE),false).show();
+                new TimePickerDialog(getActivity(),timeSetListener,calendar.get(Calendar.HOUR_OF_DAY),calendar.get(Calendar.MINUTE),false).show();
             }
         };
-        DatePickerDialog datePickerDialog = new DatePickerDialog(AddEditTaskActivity.this,dateSetListener,calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH));
+        DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(),dateSetListener,calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH));
         datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis());
         datePickerDialog.show();
     }

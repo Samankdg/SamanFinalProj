@@ -30,6 +30,7 @@ public class CalendarActivity extends AppCompatActivity implements NavigationVie
         setContentView(R.layout.activity_calendar);
 
         viewModel = ViewModelProviders.of(this).get(CalendarActivityViewModel.class);
+
         drawerLayout = findViewById(R.id.drawer_layout_calendar);
         navigationView = findViewById(R.id.nav_view);
 
