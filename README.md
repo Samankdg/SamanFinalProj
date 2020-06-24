@@ -111,7 +111,7 @@ Handling my activity using fragments to make activity simple
 </tbody>
 </table>
 
-##Handling Fragments from Activity
+## Handling Fragments from Activity
 <table>
 <thead>
 <tr>
