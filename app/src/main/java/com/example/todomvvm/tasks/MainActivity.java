@@ -107,23 +107,6 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
             navigationView.setNavigationItemSelectedListener(this);
             navigationView.setCheckedItem(R.id.nav_home);
 
-
-        /*
-         Set the Floating Action Button (FAB) to its corresponding View.
-         Attach an OnClickListener to it, so that when it's clicked, a new intent will be created
-         to launch the AddTaskActivity.
-         */
-//            FloatingActionButton fabButton = findViewById(R.id.fab);
-//
-//            fabButton.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    // Create a new intent to start an AddTaskActivity
-//                    Intent addTaskIntent = new Intent(MainActivity.this, AddEditTaskActivity.class);
-//                    startActivity(addTaskIntent);
-//                }
-//            });
-
             viewModel.getTasks().observe(this, new Observer<List<TaskEntry>>() {
                 @Override
                 public void onChanged(List<TaskEntry> taskEntries) {

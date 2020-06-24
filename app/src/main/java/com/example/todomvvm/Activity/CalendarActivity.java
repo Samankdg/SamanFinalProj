@@ -21,8 +21,6 @@ import com.google.android.material.navigation.NavigationView;
 public class CalendarActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     CalendarActivityViewModel viewModel;
-//    CalendarView calendarView;
-//    TextView myCalendar;
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
@@ -43,18 +41,9 @@ public class CalendarActivity extends AppCompatActivity implements NavigationVie
         navigationView.setCheckedItem(R.id.nav_calendar);
 
         handleFragment(new CalendarFragment());
-
-//        calendarView = (CalendarView) findViewById(R.id.calendarView);
-//        myCalendar = (TextView) findViewById(R.id.myCalendar);
-//
-//        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-//            @Override
-//            public void onSelectedDayChange(@NonNull CalendarView view, int i, int i1, int i2) {
-//                String date = (i1+ 1) + "/" + i2 + "/" + i;
-//                myCalendar.setText(date);
-//            }
-//        });
     }
+
+
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
