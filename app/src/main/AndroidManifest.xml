@@ -11,21 +11,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SignUpActivity"></activity>
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".Activity.SignUpActivity" android:configChanges="orientation|screenSize"></activity>
+        <activity android:name=".Activity.LoginActivity" android:configChanges="orientation|screenSize" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".Activity.SplashScreen"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CalendarActivity" />
+        <activity android:name=".Activity.CalendarActivity" />
         <activity
             android:name=".addedittask.AddEditTaskActivity"
             android:label="Add a new Task" />
         <activity android:name=".tasks.MainActivity" />
+        <receiver android:name=".addedittask.MyNotificationPublisher" />
     </application>
 
 </manifest>

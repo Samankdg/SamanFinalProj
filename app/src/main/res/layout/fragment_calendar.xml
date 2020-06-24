@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.CalendarFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+
+    <TextView
+        android:layout_marginTop="40dp"
+        android:id="@+id/myCalendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mark Your Dates"
+        android:textColor="#FFFFFF"
+        android:layout_gravity="center_horizontal"
+        android:textSize="23sp" />
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:background="@drawable/roundbox"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:paddingLeft ="10dp"
+        android:paddingRight="10dp"
+        android:text="Save My Date"
+        android:textColor="#FFFFFF"
+        android:background="@color/colorAccent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+</FrameLayout>

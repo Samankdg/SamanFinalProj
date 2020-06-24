@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.todomvvm.LoginActivity">
+    tools:context="com.example.todomvvm.Activity.LoginActivity">
 
     <FrameLayout
-        android:id="@+id/frameLayout"
+        android:id="@+id/frameLayoutLogin"
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
 <!--    <RelativeLayout-->
 <!--        android:layout_width="match_parent"-->
