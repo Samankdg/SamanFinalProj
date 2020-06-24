@@ -117,14 +117,25 @@ Handling my activity using fragments to make activity simple
 <tr>
 <th align="center">Handling Login</th>
 <th align="center">Handling Signup</th>
-<th align="center">Handling SplashScreen</th>
-<th align="center">Handling Calendar</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="center"><img src = "images/HandlingLogin.png" width="800" height="660"></td>
 <td align="center"><img src = "images/HandlingSignup.png" width="800" height="660"></td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th align="center">Handling SplashScreen</th>
+<th align="center">Handling Calendar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
 <td align="center"><img src = "images/HandlingSplashScreen.png" width="800" height="660"></td>
 <td align="center"><img src = "images/HandlingCalendar.png" width="800" height="660"></td>
 </tr>
