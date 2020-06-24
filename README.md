@@ -111,7 +111,7 @@ Handling my activity using fragments to make activity simple
 </tbody>
 </table>
 
-##Handling Fragments
+##Handling Fragments from Activity
 <table>
 <thead>
 <tr>
@@ -138,6 +138,20 @@ Handling my activity using fragments to make activity simple
 <tr>
 <td align="center"><img src = "images/HandlingSplashScreen.png" width="400" height="300"></td>
 <td align="center"><img src = "images/HandlingCalendar.png" width="500" height="300"></td>
+</tr>
+</tbody>
+</table>
+
+##Dynamic Fragment in MainActivity
+<table>
+<thead>
+<tr>
+<th align="center">Handling FAB and Header</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img src = "images/DynamicFragment.png" width="400" height="300"></td>
 </tr>
 </tbody>
 </table>
