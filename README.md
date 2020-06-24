@@ -105,8 +105,28 @@ Handling my activity using fragments to make activity simple
 </thead>
 <tbody>
 <tr>
-<td align="center"><img src = "images/FragmentsJava.png" width="200" height="360"></td>
-<td align="center"><img src = "images/FragmentsLayout.png" width="200" height="360"></td>
+<td align="center"><img src = "images/FragmentsJava.png" width="400" height="360"></td>
+<td align="center"><img src = "images/FragmentsLayout.png" width="400" height="360"></td>
+</tr>
+</tbody>
+</table>
+
+##Handling Fragments
+<table>
+<thead>
+<tr>
+<th align="center">Handling Login</th>
+<th align="center">Handling Signup</th>
+<th align="center">Handling SplashScreen</th>
+<th align="center">Handling Calendar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img src = "images/HandlingLogin.png" width="400" height="360"></td>
+<td align="center"><img src = "images/HandlingSignup.png" width="400" height="360"></td>
+<td align="center"><img src = "images/HandlingSplashScreen.png" width="400" height="360"></td>
+<td align="center"><img src = "images/HandlingCalendar.png" width="400" height="360"></td>
 </tr>
 </tbody>
 </table>
