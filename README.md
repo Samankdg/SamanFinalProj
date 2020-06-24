@@ -137,7 +137,7 @@ Handling my activity using fragments to make activity simple
 <tbody>
 <tr>
 <td align="center"><img src = "images/HandlingSplashScreen.png" width="400" height="300"></td>
-<td align="center"><img src = "images/HandlingCalendar.png" width="400" height="300"></td>
+<td align="center"><img src = "images/HandlingCalendar.png" width="500" height="300"></td>
 </tr>
 </tbody>
 </table>
