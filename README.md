@@ -105,8 +105,8 @@ Handling my activity using fragments to make activity simple
 </thead>
 <tbody>
 <tr>
-<td align="center"><img src = "images/FragmentsJava.gif" width="200" height="360"></td>
-<td align="center"><img src = "images/FragmentsLayout.gif" width="200" height="360"></td>
+<td align="center"><img src = "images/FragmentsJava.png" width="200" height="360"></td>
+<td align="center"><img src = "images/FragmentsLayout.png" width="200" height="360"></td>
 </tr>
 </tbody>
 </table>
