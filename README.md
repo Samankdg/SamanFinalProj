@@ -142,7 +142,7 @@ Handling my activity using fragments to make activity simple
 </tbody>
 </table>
 
-##Dynamic Fragment in MainActivity
+## Dynamic Fragment in MainActivity
 <table>
 <thead>
 <tr>
