@@ -19,7 +19,7 @@ import android.widget.Toast;
 import com.example.todomvvm.Activity.LoginActivity;
 import com.example.todomvvm.R;
 import com.example.todomvvm.database.AppDatabase;
-import com.example.todomvvm.database.User;
+import com.example.todomvvm.database.Tables.User;
 import com.example.todomvvm.database.UserDao;
 
 

@@ -23,9 +23,7 @@ import android.widget.Switch;
 import android.widget.TimePicker;
 
 import com.example.todomvvm.R;
-import com.example.todomvvm.database.AppDatabase;
-import com.example.todomvvm.database.Repository;
-import com.example.todomvvm.database.TaskEntry;
+import com.example.todomvvm.database.Tables.TaskEntry;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

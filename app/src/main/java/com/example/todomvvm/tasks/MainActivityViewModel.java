@@ -1,15 +1,13 @@
 package com.example.todomvvm.tasks;
 
 import android.app.Application;
-import android.view.View;
 
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.ViewModel;
 
 import com.example.todomvvm.database.AppDatabase;
 import com.example.todomvvm.database.Repository;
-import com.example.todomvvm.database.TaskEntry;
+import com.example.todomvvm.database.Tables.TaskEntry;
 
 import java.util.List;
 

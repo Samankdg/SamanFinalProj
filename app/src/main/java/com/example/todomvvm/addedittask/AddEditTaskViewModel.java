@@ -4,11 +4,10 @@ import android.app.Application;
 
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.ViewModel;
 
 import com.example.todomvvm.database.AppDatabase;
 import com.example.todomvvm.database.Repository;
-import com.example.todomvvm.database.TaskEntry;
+import com.example.todomvvm.database.Tables.TaskEntry;
 
 public class AddEditTaskViewModel extends AndroidViewModel {
 

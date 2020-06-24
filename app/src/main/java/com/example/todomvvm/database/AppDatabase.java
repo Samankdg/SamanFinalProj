@@ -8,6 +8,9 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
+import com.example.todomvvm.database.Tables.TaskEntry;
+import com.example.todomvvm.database.Tables.User;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 

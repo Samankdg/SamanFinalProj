@@ -24,10 +24,10 @@ import com.example.todomvvm.Activity.CalendarActivity;
 import com.example.todomvvm.Activity.LoginActivity;
 import com.example.todomvvm.Fragments.fabFragment;
 import com.example.todomvvm.Fragments.headerFragment;
-import com.example.todomvvm.database.User;
+import com.example.todomvvm.database.Tables.User;
 import com.example.todomvvm.addedittask.AddEditTaskActivity;
 import com.example.todomvvm.R;
-import com.example.todomvvm.database.TaskEntry;
+import com.example.todomvvm.database.Tables.TaskEntry;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.List;

@@ -8,6 +8,8 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import com.example.todomvvm.database.Tables.TaskEntry;
+
 import java.util.List;
 
 @Dao

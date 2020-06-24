@@ -2,6 +2,8 @@ package com.example.todomvvm.database;
 
 import androidx.lifecycle.LiveData;
 
+import com.example.todomvvm.database.Tables.TaskEntry;
+
 import java.util.List;
 
 public class Repository {

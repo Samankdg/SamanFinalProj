@@ -13,7 +13,7 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.todomvvm.R;
-import com.example.todomvvm.database.TaskEntry;
+import com.example.todomvvm.database.Tables.TaskEntry;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
