@@ -1,11 +1,7 @@
 package com.example.todomvvm.database.Tables;
 
-
-
 import androidx.room.Embedded;
 import androidx.room.Relation;
-
-
 
 import java.util.List;
 
@@ -28,11 +24,11 @@ public class UserTasks {
         this.user = user;
     }
 
-    public List<TaskEntry> getUserTODO() {
+    public List<TaskEntry> getUserTasks() {
         return userTasks;
     }
 
-    public void setUserTODO(List<TaskEntry> userTODO) {
+    public void setUserTasks(List<TaskEntry> userTODO) {
         this.userTasks = userTODO;
     }
 }
