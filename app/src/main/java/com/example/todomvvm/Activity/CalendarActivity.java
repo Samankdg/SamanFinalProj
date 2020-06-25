@@ -56,11 +56,16 @@ public class CalendarActivity extends AppCompatActivity implements NavigationVie
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
-//            case R.id.nav_home:
-//                Intent intent = new Intent(CalendarActivity.this, MainActivity.class);
-//                startActivity(intent);
-//                finish();
-//                break;
+            case R.id.nav_home:
+                Intent intent = new Intent(CalendarActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+                break;
+
+            case R.id.nav_calendar:
+                Intent intent1 = new Intent(CalendarActivity.this, CalendarActivity.class);
+                startActivity(intent1);
+                break;
 
             case R.id.nav_logout:
                 Intent intent2 = new Intent(CalendarActivity.this, LoginActivity.class);

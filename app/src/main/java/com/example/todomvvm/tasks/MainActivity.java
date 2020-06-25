@@ -167,6 +167,7 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
             case R.id.nav_calendar:
                 Intent intent1 = new Intent(MainActivity.this, CalendarActivity.class);
                 startActivity(intent1);
+                finish();
                 break;
 
             case R.id.nav_delete:
