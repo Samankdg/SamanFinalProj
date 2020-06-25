@@ -28,7 +28,7 @@ public class UserTasks {
         return userTasks;
     }
 
-    public void setUserTasks(List<TaskEntry> userTODO) {
-        this.userTasks = userTODO;
+    public void setUserTasks(List<TaskEntry> userTasks) {
+        this.userTasks = userTasks;
     }
 }

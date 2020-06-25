@@ -172,7 +172,7 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
 
             case R.id.nav_delete:
                 viewModel.deleteAllTask();
-                Toast.makeText(this, "All TODOs Deleted", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "All Tasks Deleted", Toast.LENGTH_SHORT).show();
                 return true;
 
             case R.id.nav_logout:
